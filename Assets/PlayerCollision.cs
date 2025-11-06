@@ -2,32 +2,23 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    private GameManager gameManager;
+    private ScoringHealth scoringHealth; 
 
-    void Start()
+    private void Start()
     {
-        gameManager = FindFirstObjectByType<GameManager>();
+        scoringHealth = FindFirstObjectByType<ScoringHealth>(); 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle"))
         {
-            // Lose health
-            gameManager.TakeDamage();
-
-            // Optional: play sound or particle
-            // AudioSource.PlayClipAtPoint(hitSound, transform.position);
-            // Instantiate(hitParticle, transform.position, Quaternion.identity);
-
-            // Destroy the obstacle so it doesn’t hit again
-            Destroy(other.gameObject);
+            scoringHealth.TakeDamage(20);
         }
-
-        if (other.CompareTag("Coin"))
+        else if (collision.gameObject.CompareTag("Collectible"))
         {
-            gameManager.score += 100;
-            Destroy(other.gameObject);
+            scoringHealth.AddScore(10);
+            Destroy(collision.gameObject);
         }
     }
 }
