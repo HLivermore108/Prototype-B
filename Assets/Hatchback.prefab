@@ -356,7 +356,6 @@ GameObject:
   - component: {fileID: 8080626210629279878}
   - component: {fileID: 4080312293609642034}
   - component: {fileID: -6935903489371451711}
-  - component: {fileID: 490470274880061154}
   - component: {fileID: -2270643080638093014}
   m_Layer: 0
   m_Name: Hatchback
@@ -451,18 +450,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 35
---- !u!114 &490470274880061154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7769690492283750692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51d2aef6649975941b520b09e27da5b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &-2270643080638093014
 BoxCollider:
   m_ObjectHideFlags: 0
